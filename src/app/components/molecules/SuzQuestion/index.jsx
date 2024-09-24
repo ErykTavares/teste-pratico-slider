@@ -14,6 +14,11 @@ export default function SuzQuestion({ id, question, subText }) {
         borderBottom: "1px dashed #1DC25A",
         paddingX: "2rem",
         margin: 0,
+
+        "@media (max-width: 1024px)": {
+          height: "300px",
+          gridTemplateColumns: "100%",
+        },
       }}
       mb={4}
     >
@@ -70,7 +75,9 @@ export default function SuzQuestion({ id, question, subText }) {
           >
             {question}
           </Typography>
-          <Typography sx={{ width: "65%", textAlign: "left" }}>
+          <Typography
+            sx={{ width: "70%", textAlign: "justify", color: "#000" }}
+          >
             {subText}
           </Typography>
         </Box>

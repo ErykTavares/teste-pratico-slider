@@ -12,9 +12,9 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
+  overflow-y: auto;
 
   background-color: #f7f4e9;
-  color: black;
 }
 
 @media (prefers-color-scheme: dark) {

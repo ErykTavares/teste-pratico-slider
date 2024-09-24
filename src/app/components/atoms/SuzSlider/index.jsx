@@ -1,17 +1,24 @@
 "use client";
 
+
 import { useCallback, useEffect, useState } from "react";
-
 import { Box, Slider, Typography } from "@mui/material";
-
 import rangesApi from "@/app/apis/rangesApi";
-
 import { colors, defaultSliderData } from "./utils";
 
 export default function SuzSlider({ defaultValue = 50, min = 0, max = 100 }) {
   const [value, setValue] = useState(defaultValue);
   const [ranges, setRanges] = useState([]);
   const [sliderData, setSliderData] = useState(defaultSliderData);
+
+  const marks = ranges
+    ?.filter((range) => range?.max % 20 === 0)
+    ?.map((range) => ({
+      value: range?.max,
+      label: range?.title,
+    }));
+
+  marks.pop();
 
   const getRanges = useCallback(async () => {
     try {
@@ -27,8 +34,8 @@ export default function SuzSlider({ defaultValue = 50, min = 0, max = 100 }) {
   };
 
   const handleSetSliderData = useCallback(() => {
-    const currentRange = ranges.find((fin) => {
-      return fin.min <= value && value <= fin.max;
+    const currentRange = ranges?.find((fin) => {
+      return fin?.min <= value && value <= fin?.max;
     });
 
     setSliderData(currentRange);
@@ -65,13 +72,16 @@ export default function SuzSlider({ defaultValue = 50, min = 0, max = 100 }) {
           "& .MuiSlider-valueLabel": {
             display: "none!important",
           },
+          "& .MuiSlider-markLabel": {
+            display: "none",
+          },
         }}
         onChange={handleSetValue}
         min={min}
         value={value}
         step={20}
         max={max}
-        marks
+        marks={marks}
         aria-label="Default"
         color={colors[sliderData?.backgroundColor]}
         valueLabelDisplay="auto"
