@@ -1,0 +1,44 @@
+# Dependências do Node.js
+/node_modules
+/.pnp
+.pnp.js
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Arquivos de compilação
+/.next/
+/out/
+
+# Arquivos de build
+/build/
+/dist/
+
+# Logs de produção
+/logs
+*.log
+
+# Arquivos de lock do TypeScript
+/.turbo
+
+# Configurações locais de ambientes de desenvolvimento
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Diretórios de cache
+/.vercel/cache
+/.next/cache
+
+# Arquivos de Editor (opcional)
+.vscode/
+.idea/
+.DS_Store
+
+# Coverage de Testes
+/coverage
+
+# Arquivos ger
