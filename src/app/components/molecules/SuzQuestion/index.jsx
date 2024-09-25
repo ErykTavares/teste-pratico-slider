@@ -1,4 +1,5 @@
 import { Box, Divider, Typography } from "@mui/material";
+
 import SuzSlider from "../../atoms/SuzSlider";
 
 export default function SuzQuestion({ id, question, subText }) {

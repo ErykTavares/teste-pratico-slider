@@ -1,5 +1,6 @@
 import Header from "./components/organisms/header";
 import SuzAssessment from "./components/organisms/SuzAssessment";
+
 import styles from "./page.module.css";
 
 export default function Home() {

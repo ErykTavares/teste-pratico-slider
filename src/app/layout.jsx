@@ -1,5 +1,6 @@
-import "./globals.css";
 import { Open_Sans } from "next/font/google";
+
+import "./globals.css";
 
 export const metadata = {
   title: "Sistema Avaliação de Performance",

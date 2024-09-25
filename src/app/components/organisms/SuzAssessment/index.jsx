@@ -1,6 +1,8 @@
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { Box, Button } from "@mui/material";
+
 import SuzQuestion from "../../molecules/SuzQuestion";
+
 import { typesDictionary } from "./utils";
 
 export default function SuzAssessment({ type }) {

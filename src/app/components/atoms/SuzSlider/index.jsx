@@ -2,10 +2,13 @@
 
 import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
-import { Box, Slider, SliderThumb, Typography } from "@mui/material";
-import { colors, defaultSliderData } from "./utils";
-import rangesApi from "@/app/apis/rangesApi";
+
 import profilePic from "../../../../../public/assets/images/leaf.png";
+
+import { Box, Slider, SliderThumb, Typography } from "@mui/material";
+import rangesApi from "@/app/apis/rangesApi";
+
+import { colors, defaultSliderData } from "./utils";
 
 export default function SuzSlider({ defaultValue = 50, min = 0, max = 100 }) {
   const [value, setValue] = useState(defaultValue);
