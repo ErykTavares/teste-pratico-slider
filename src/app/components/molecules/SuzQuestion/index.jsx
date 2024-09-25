@@ -6,13 +6,13 @@ export default function SuzQuestion({ id, question, subText }) {
     <Box
       sx={{
         width: "100%",
-        height: "200px",
+        height: "260px",
         display: "grid",
         gridTemplateColumns: "580px 1fr",
         placeItems: "center",
         backgroundColor: "#f2f0ea",
         borderBottom: "1px dashed #1DC25A",
-        paddingX: "2rem",
+        padding: "2rem 2rem",
         margin: 0,
 
         "@media (max-width: 1024px)": {

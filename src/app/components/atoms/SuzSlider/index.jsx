@@ -1,10 +1,11 @@
 "use client";
 
-
 import { useCallback, useEffect, useState } from "react";
-import { Box, Slider, Typography } from "@mui/material";
-import rangesApi from "@/app/apis/rangesApi";
+import Image from "next/image";
+import { Box, Slider, SliderThumb, Typography } from "@mui/material";
 import { colors, defaultSliderData } from "./utils";
+import rangesApi from "@/app/apis/rangesApi";
+import profilePic from "../../../../../public/assets/images/leaf.png";
 
 export default function SuzSlider({ defaultValue = 50, min = 0, max = 100 }) {
   const [value, setValue] = useState(defaultValue);
@@ -41,6 +42,24 @@ export default function SuzSlider({ defaultValue = 50, min = 0, max = 100 }) {
     setSliderData(currentRange);
   }, [ranges, value]);
 
+  function CustomSliderThumb({ children, sx, ...rest }) {
+    return (
+      <SliderThumb sx={{ ...sx, position: "relative" }} {...rest}>
+        {children}
+        <Box
+          sx={{
+            position: "absolute",
+            top: "-35px",
+            right: "-30px",
+            width: "40px",
+          }}
+        >
+          <Image width={36} height={36} src={profilePic} alt="logo" />
+        </Box>
+      </SliderThumb>
+    );
+  }
+
   useEffect(() => {
     getRanges();
   }, [getRanges]);
@@ -50,7 +69,7 @@ export default function SuzSlider({ defaultValue = 50, min = 0, max = 100 }) {
   }, [handleSetSliderData]);
 
   return (
-    <Box sx={{ width: "100%" }}>
+    <Box sx={{ width: "90%" }}>
       <Slider
         sx={{
           height: "8px",
@@ -75,6 +94,9 @@ export default function SuzSlider({ defaultValue = 50, min = 0, max = 100 }) {
           "& .MuiSlider-markLabel": {
             display: "none",
           },
+        }}
+        slots={{
+          thumb: CustomSliderThumb,
         }}
         onChange={handleSetValue}
         min={min}

@@ -1,5 +1,7 @@
-import { Box, Typography } from "@mui/material";
 import React from "react";
+import { Box, Typography } from "@mui/material";
+import Image from "next/image";
+import profilePic from "../../../../../public/assets/images/leaf.png";
 
 const Header = () => {
   return (
@@ -15,11 +17,13 @@ const Header = () => {
         borderBottom: "1px solid #047835",
       }}
     >
+      <Image width={15} height={15} src={profilePic} alt="logo" />
       <Typography
         sx={{
           color: "#047835",
           fontWeight: "bold",
           fontFamily: "inherit",
+          marginLeft: ".2rem",
         }}
       >
         AVALIAÇÃO DE PERFORMANCE
